@@ -10,8 +10,8 @@ set(SerenityOS_SOURCE_DIR $ENV{SERENITY_SOURCE_DIR})
 include(${SerenityOS_SOURCE_DIR}/Meta/CMake/code_generators.cmake)
 add_custom_target(all_generated)
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
+include_directories(${SerenityOS_SOURCE_DIR})
 include_directories(${SerenityOS_SOURCE_DIR}/Userland/Libraries)
-include_directories(${SerenityOS_SOURCE_DIR}/AK)
 
 compile_gml(src/IRCMainWindow.gml IRCMainWindowGML.h irc_main_window_gml)
 
@@ -22,6 +22,6 @@ set(SOURCES
         IRCMainWindowGML.h)
 
 add_executable(${PROJECT_NAME} ${SOURCES})
-target_link_libraries(${PROJECT_NAME} gui main gfx core cpp)
+target_link_libraries(${PROJECT_NAME} gui main gfx core cpp config desktop)
 
 install(TARGETS ${PROJECT_NAME} RUNTIME DESTINATION bin)
