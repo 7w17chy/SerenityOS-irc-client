@@ -1,6 +1,11 @@
 #pragma once
 
-class MainWidget {
+#include <LibGUI/Widget.h>
+
+class MainWidget final : public GUI::Widget {
+    C_OBJECT(MainWidget);
 public:
-    static int get_value();
+    virtual ~MainWidget() override = default;
+private:
+    MainWidget();
 };

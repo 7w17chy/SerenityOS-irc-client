@@ -1,6 +1,7 @@
 #include "MainWidget.h"
+#include <IRCMainWindowGML.h>
 
-int MainWidget::get_value()
+MainWidget::MainWidget()
 {
-    return 32;
+    load_from_gml(irc_main_window_gml);
 }

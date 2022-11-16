@@ -22,6 +22,6 @@ set(SOURCES
         IRCMainWindowGML.h)
 
 add_executable(${PROJECT_NAME} ${SOURCES})
-target_link_libraries(${PROJECT_NAME} gui main)
+target_link_libraries(${PROJECT_NAME} gui main gfx core cpp)
 
 install(TARGETS ${PROJECT_NAME} RUNTIME DESTINATION bin)
