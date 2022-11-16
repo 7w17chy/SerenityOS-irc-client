@@ -9,7 +9,7 @@ ErrorOr<int> serenity_main(Main::Arguments arguments)
     auto widget = TRY(window->try_set_main_widget<GUI::Widget>());
 
     window->set_title("IRC Client");
-    window->resize(200, 100);
+    window->resize(640, 400);
     window->show();
 
     return app->exec();

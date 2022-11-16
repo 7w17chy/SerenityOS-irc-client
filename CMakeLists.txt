@@ -13,6 +13,9 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR})
 include_directories(${SerenityOS_SOURCE_DIR})
 include_directories(${SerenityOS_SOURCE_DIR}/Userland/Libraries)
 
+add_compile_options(-Wno-literal-suffix) # AK::StringView defines operator"" sv, which GCC complains does not have an underscore.
+add_compile_options(-fno-gnu-keywords)   # JS::Value has a method named typeof, which also happens to be a GNU keyword.
+
 compile_gml(src/IRCMainWindow.gml IRCMainWindowGML.h irc_main_window_gml)
 
 set(SOURCES

@@ -1,5 +1,5 @@
 #include "MainWidget.h"
-#include <IRCMainWindowGML.h>
+#include "IRCMainWindowGML.h"
 
 MainWidget::MainWidget()
 {
