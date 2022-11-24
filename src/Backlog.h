@@ -1,11 +1,13 @@
-//
-// Created by thulis on 23.11.22.
-//
+#pragma once
 
-#ifndef IRCCLIENT_BACKLOG_H
-#define IRCCLIENT_BACKLOG_H
+#include <AK/String.h>
+#include <AK/Weakable.h>
 
-class Backlog {
+namespace irc {
+
+class Backlog : public Weakable<Backlog>, String {
 };
+
+}
 
 #endif // IRCCLIENT_BACKLOG_H

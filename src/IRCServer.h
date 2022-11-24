@@ -1,11 +1,28 @@
-//
-// Created by thulis on 22.11.22.
-//
+#pragma once
 
-#ifndef IRCCLIENT_IRCSERVER_H
-#define IRCCLIENT_IRCSERVER_H
+#include <LibCore/Stream.h>
 
-class IRCServer {
+namespace irc {
+
+class IRCServer : public Weakable<IRCServer>
+{
+    AK_MAKE_NONCOPYABLE(IRCServer);
+public:
+    static ErrorOr<NonnullOwnPtr<IRCServer>> connect_plaintext(StringView, u16);
+    static ErrorOr<NonnullOwnPtr<IRCServer>> connect_tls(StringView, u16);
+
+private:
+    ErrorOr<void> read_from_socket();
+    explicit IRCServer(NonnullOwnPtr<Core::Stream::Socket> socket);
+
+protected:
+    enum class IRCEventType : u32 {
+        MessageReceived
+    };
+
+private:
+    NonnullOwnPtr<Core::Stream::Socket> m_socket;
+    ByteBuffer m_buffer;
 };
 
-#endif // IRCCLIENT_IRCSERVER_H
+}

@@ -1,11 +1,24 @@
-//
-// Created by thulis on 22.11.22.
-//
+#pragma once
 
-#ifndef IRCCLIENT_COMMANDBUFFER_H
-#define IRCCLIENT_COMMANDBUFFER_H
+#include <LibGUI/TextBox.h>
 
-class CommandBuffer {
+namespace IRCClient {
+
+class CommandBuffer : public GUI::TextEditor {
+    C_OBJECT(CommandBuffer)
+
+public:
+    virtual ~CommandBuffer() = default;
+
+protected:
+    CommandBuffer()
+        : GUI::TextEditor(GUI::TextEditor::Type::SingleLine)
+    {}
+
+private:
+    void keydown_event(GUI::KeyEvent&) override;
 };
 
-#endif // IRCCLIENT_COMMANDBUFFER_H
+}
+
+REGISTER_WIDGET(IRCClient, CommandBuffer);

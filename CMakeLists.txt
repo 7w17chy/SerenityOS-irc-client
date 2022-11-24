@@ -22,9 +22,11 @@ set(SOURCES
         src/main.cpp
         src/MainWidget.cpp
         src/MainWidget.h
-        IRCMainWindowGML.h)
+        IRCMainWindowGML.h
+        src/IRCServer.cpp
+        src/IRCServer.h src/CommandBuffer.cpp src/CommandBuffer.h src/CommandParser.cpp src/CommandParser.h src/Session.cpp src/Session.h src/Backlog.cpp src/Backlog.h)
 
 add_executable(${PROJECT_NAME} ${SOURCES})
-target_link_libraries(${PROJECT_NAME} gui main gfx core cpp config desktop)
+target_link_libraries(${PROJECT_NAME} gui main gfx core cpp config desktop tls crypto)
 
 install(TARGETS ${PROJECT_NAME} RUNTIME DESTINATION bin)
