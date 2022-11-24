@@ -1,3 +1,4 @@
 Build
 cmake-build-debug
 .kdev4
+.idea
