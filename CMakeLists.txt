@@ -24,7 +24,7 @@ set(SOURCES
         src/MainWidget.h
         IRCMainWindowGML.h
         src/IRCServer.cpp
-        src/IRCServer.h src/MessageBuffer.cpp src/MessageBuffer.h src/MessageParser.cpp src/MessageParser.h src/Session.cpp src/Session.h src/Backlog.cpp src/Backlog.h)
+        src/IRCServer.h src/MessageBuffer.cpp src/MessageBuffer.h src/Session.cpp src/Session.h src/Backlog.cpp src/Backlog.h src/Message.cpp src/Message.h)
 
 add_executable(${PROJECT_NAME} ${SOURCES})
 target_link_libraries(${PROJECT_NAME} gui main gfx core cpp config desktop tls crypto)

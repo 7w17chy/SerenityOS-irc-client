@@ -9,5 +9,3 @@ class Backlog : public Weakable<Backlog>, String {
 };
 
 }
-
-#endif // IRCCLIENT_BACKLOG_H

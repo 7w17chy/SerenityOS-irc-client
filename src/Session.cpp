@@ -21,6 +21,7 @@ ErrorOr<void> irc::Session::add_server(StringView address, NonnullOwnPtr<irc::IR
         dbgln("Reconnected to already connected server {}", address);
     }
     }
+    return {};
 }
 
 void irc::Session::make_focused_server(StringView address)
