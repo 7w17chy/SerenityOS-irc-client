@@ -22,7 +22,7 @@
         }
     }
 
-    @IRCClient::CommandBuffer {
+    @IRCClient::MessageBuffer {
         mode: "Editable"
         type: "SingleLine"
         preferred_height: 25

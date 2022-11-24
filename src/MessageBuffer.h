@@ -4,14 +4,14 @@
 
 namespace IRCClient {
 
-class CommandBuffer : public GUI::TextEditor {
-    C_OBJECT(CommandBuffer)
+class MessageBuffer : public GUI::TextEditor {
+    C_OBJECT(MessageBuffer)
 
 public:
-    virtual ~CommandBuffer() = default;
+    virtual ~MessageBuffer() = default;
 
 protected:
-    CommandBuffer()
+    MessageBuffer()
         : GUI::TextEditor(GUI::TextEditor::Type::SingleLine)
     {}
 
@@ -21,4 +21,4 @@ private:
 
 }
 
-REGISTER_WIDGET(IRCClient, CommandBuffer);
+REGISTER_WIDGET(IRCClient, MessageBuffer);

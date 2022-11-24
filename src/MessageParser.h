@@ -10,10 +10,10 @@ struct AddressAndPort {
     u16 port;
 };
 
-class CommandParser {
+class MessageParser {
 public:
     static ErrorOr<void> check_grammar(StringView);
-    static Optional<AddressAndPort> is_connect_command(StringView);
+    static Optional<AddressAndPort> is_connect_message(StringView);
 };
 
 }

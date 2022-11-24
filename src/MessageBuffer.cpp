@@ -1,8 +1,8 @@
-#include "CommandBuffer.h"
+#include "MessageBuffer.h"
 #include "MainWidget.h"
 #include <LibGUI/Application.h>
 
-void IRCClient::CommandBuffer::keydown_event(GUI::KeyEvent& event)
+void IRCClient::MessageBuffer::keydown_event(GUI::KeyEvent& event)
 {
    GUI::TextEditor::keydown_event(event);
 
